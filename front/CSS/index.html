@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 요소 선택자 */
+        div {
+            background-color: dodgerblue;
+        }
+        /* 클래스 선택자 */
+        .a1 {
+            background-color: khaki;
+        }
+        /* 아이디 선택자 */
+        #id100 {
+            background-color: pink;
+        }
+        /* 아이디가 id100이고 클래스가 a1인 요소(두개를 모두 가진 요소) */
+        #id100.a1 {
+            background-color: teal;
+        }
+        .temp {
+            /* 가장 우선순위가 높은 !important 사용법 */
+            /* 충돌의 해결할 수 있는 최후의 수단!! */
+            color: blue !important;
+        }
+        input[type="text"] {
+            border: 2px solid blue;
+        }
+        [data-custom="mystyle1"] {
+            background-color: orange;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>DIV 요소입니다</div>
+    <p>P 요소 입니다</p>
+    <p class="a1">클래스가 a1입니다</p>
+    <p class="a2">클래스가 a2입니다</p>
+    <p id="100" >id가 100입니다</p>
+    <p id="200" class="a1">id가 200입니다</p>
+    <article class="a1">나는 아티클 클래스는 a1입니다</article>
+    <p class="text" style="border: 2px dotted red;">인라인 스타일입니다</p>
+    <form>
+        <p><input type="text"></p>
+        <p><input type="password"></p>
+        <p data-custom="mystyle1">내가 만든 속성을 사용해도 됨</p>
+        <p data-custom="mystyle2">대신 data-*** 형태 권장</p>
+    </form>
+</body>
+</html>
