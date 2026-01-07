@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 핵심 포인트 
+        여기에 사용되는 문법은 서버로의 폼 전송을 목적으로 함
+        <form>와 함께 사용되는 <input>의 타입을 이해해야 함.
+        최종적으로 유저의 정보를 서버로 전달하는 동작은 <input type="submit"> 으로 완성됨. 
+    -->
     <h3>폼 태그 예제</h3>
     <form action="">
         <div>
@@ -17,12 +22,34 @@
             <input type="password" id="user-password" name="password">
         </div>
         <div>
-            <input type="submit" value="login">
+            <!-- <input type="submit" value="login"> -->
         </div>
     </form>
     <form action="">
     </form>
-    <input type="date" name="date"> 
+        <div><input type="date" name="date"></div>
+
+        <!-- 아래 버튼 모양은 submit이 아니므로 전송기능이 없음. 그냥 버튼 -->
+        <div><input type="button" value="나는 버튼"></div>
+        <!-- button태그는 기본적으로 submit을 포함하고 있음 -->
+        <div><button>나도 버튼</button></div>
+
+        <input type="file">
+        <input type="hidden" name="상품 id" value="12345">
+        <input type="text" placeholder="예 2000.01.01" name="address">
+        <textarea name="memo" cols="40" rows="4"></textarea>
+
+        <!-- select & ooption 드롭다운 목록 -->
+        <div>
+        <label for="prod1">상품선택</label>
+        <select>
+            <option value="special_3">선물용 3kg</option>
+            <option value="special_5">선물용 5kg</option>
+            <option value="family_3">가정용 3kg</option>
+            <option value="family_5">가정용 5kg</option>
+        </select>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br> 
     <fieldset>
         <legend>상품선택</legend>
         <p>주문할 상품을 선택해주세요</p>
