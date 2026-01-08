@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            /* 자식이 relative, absolute, fixed, sticky 인경우 기준점을 제공하기 위해 반드시 부모는 relative여야함 (static이면 안됨) */
+            position: relative;
+            width: 400px;
+            border: 3px solid black;
+            padding: 10px;
+            margin: 20px;
+            background-color: #f0f0f0;
+            /* 내부요소(글자, 이미지 또는 자식태그)를 가운데 정렬하는 방법 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .box1 {
+            background-color: #e74c3c;
+        }
+        .box2 {
+            background-color: #3498db;
+            position: relative;
+            top: 50px;
+            left: 50px;
+            opacity: 0.8;
+        }
+        .box3 {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <h3>position 속성 예제 - relative와 absolute</h3>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2 (Target)</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+</html>
