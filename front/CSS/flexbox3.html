@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>중첩 Flexbox 레이아웃</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      /* 전체 */
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #f3f5f7;
+      }
+
+      /* 헤더 */
+      .header {
+        height: 90px;
+        background-color: #2f3a45;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+      }
+
+      .logo {
+        width: 110px;
+        height: 50px;
+        background: #39424c;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .util {
+        width: 150px;
+        height: 50px;
+        background: #6d7f93;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      /* 메인 */
+      .main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* 사이드바 */
+      .sidebar {
+        width: 300px;
+        background: #d9d9d9;
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .profile {
+        height: 120px;
+        background: #00a6ff;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .menu {
+        flex: 1;
+        background: #00a6ff;
+        color: #fff;
+        display: flex;
+        align-items: flex-start;
+        padding: 30px 0 0 30px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      /* 콘텐츠 */
+      .content {
+        flex: 1;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      /* 배너 */
+      .banner {
+        height: 110px;
+        background: #d6ad2c;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      /* 카드 영역 */
+      .cards {
+        display: flex;
+        gap: 25px;
+      }
+
+      .card {
+        flex: 1;
+        background: #f7f7f7;
+        border: 1px solid #d0d0d0;
+      }
+
+      .card-header {
+        height: 60px;
+        background: #43b72a;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .card-body {
+        height: 90px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      /* 위젯 */
+      .widgets {
+        display: flex;
+        gap: 25px;
+      }
+
+      .widget {
+        flex: 1;
+        height: 110px;
+        background: #9a8cff;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding-left: 40px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      /* 푸터 */
+      .footer {
+        height: 80px;
+        background: #2f3a45;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- 헤더 -->
+      <header class="header">
+        <div class="logo">로고</div>
+        <div class="util">유틸 메뉴</div>
+      </header>
+
+      <!-- 메인 -->
+      <div class="main">
+        <!-- 사이드바 -->
+        <aside class="sidebar">
+          <div class="profile">프로필 박스</div>
+          <div class="menu">메뉴 리스트</div>
+        </aside>
+
+        <!-- 콘텐츠 -->
+        <section class="content">
+          <div class="banner">상단 배너</div>
+
+          <!-- 카드 영역 -->
+          <div class="cards">
+            <div class="card">
+              <div class="card-header">카드 헤더</div>
+              <div class="card-body">카드 본문</div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">카드 헤더</div>
+              <div class="card-body">카드 본문</div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">카드 헤더</div>
+              <div class="card-body">카드 본문</div>
+            </div>
+          </div>
+
+          <!-- 위젯 영역 -->
+          <div class="widgets">
+            <div class="widget">위젯 A</div>
+            <div class="widget">위젯 B</div>
+          </div>
+        </section>
+      </div>
+
+      <!-- 푸터 -->
+      <footer class="footer">푸터</footer>
+    </div>
+  </body>
+</html>

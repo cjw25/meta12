@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox 레이아웃 예제</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      /* 전체 페이지 */
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #eef2f3;
+      }
+
+      /* 헤더 */
+      .header {
+        height: 90px;
+        background: #2f4256;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      /* 메인 영역 (사이드 + 콘텐츠) */
+      .main {
+        flex: 1;
+        display: flex;
+      }
+
+      /* 사이드 메뉴 */
+      .sidebar {
+        width: 240px;
+        background-color: #3f556b;
+        color: #fff;
+        padding: 30px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      /* 콘텐츠 영역 */
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        padding: 40px;
+      }
+
+      /* 본문 */
+      .article {
+        flex: 1;
+        background-color: #ffffff;
+        padding: 30px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      /* 이벤트 광고 */
+      .event {
+        height: 140px;
+        background-color: #f2c400;
+        padding: 30px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      /* 로그인 창 */
+      .login {
+        height: 160px;
+        background-color: #1abc9c;
+        padding: 30px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      /* 푸터 */
+      .footer {
+        height: 80px;
+        background-color: #2f4256;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">헤더 (로고 / 상단메뉴)</header>
+
+      <div class="main">
+        <nav class="sidebar">사이드 메뉴</nav>
+
+        <section class="content">
+          <article class="article">본문 콘텐츠</article>
+
+          <div class="event">이벤트 광고</div>
+
+          <aside class="login">로그인 창</aside>
+        </section>
+      </div>
+
+      <footer class="footer">푸터</footer>
+    </div>
+  </body>
+</html>
