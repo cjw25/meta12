@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing:border-box;
+            margin:0;
+            padding:0
+        }
+        body {
+            font-family:Arial, sans-serif;
+            background:#fff;
+            padding:20px
+        }
+
+    .calendar{
+        width:1000px;
+        max-width:100%;
+        border:2px solid #000;
+        margin:auto;
+    }
+    .title {
+        background:#0b73b7; /* 파란색 */
+        color:#fff;
+        text-align:center;
+        font-size:44px;
+        font-weight:900;
+        padding:18px 10px;
+        letter-spacing:1px;
+        border-bottom:2px solid #000;
+    }
+    /* 요일 */
+    .week{
+        display:flex;
+        background:#dbeaf6;
+        border-bottom:2px solid #000;
+    }
+    .week div{
+        flex:0 0 calc(100%/7);
+        text-align:center;
+        font-size:22px;
+        padding:12px 0;
+        border-right:2px solid #000;
+    }
+    .week div:last-child{border-right:0}
+
+    /* 날짜 */
+    .days{
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .day{
+        flex:0 0 calc(100%/7);
+        height:120px;
+        border-right:2px solid #000;
+        border-bottom:2px solid #000;
+        padding:8px;
+        position:relative;
+        background:#fff;
+    }
+    .day:nth-child(7n){border-right:0}
+
+    /* 주말 열 */
+    .sun,.sat{ background:#f3b48f; }
+
+    /* 빈칸 */
+    .empty{ background:#fff; }
+
+    /* 날짜 숫자 */
+    .date{
+        font-size:22px;
+        font-weight:700;
+    }
+
+    /* 중앙 내용 */
+    .content{
+        height:calc(100% - 30px);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        font-size:20px;
+        padding:0 6px;
+    }
+</style>
+</head>
+<body>
+    <h2 class="title">2026년 1월</h2>
+    <div class="calendar">
+
+  <!-- 요일 -->
+  <div class="week">
+    <div>일</div><div>월</div><div>화</div>
+    <div>수</div><div>목</div><div>금</div><div>토</div>
+  </div>
+
+  <!-- 날짜 -->
+  <div class="days">
+    <!-- 2026-01-01(목) 시작: 앞에 일~수 4칸 비움 -->
+    <div class="day empty sun"></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+
+    <div class="day"><div class="date">1</div><div class="content">신년휴일</div></div>
+    <div class="day"><div class="date">2</div><div class="content">휴강</div></div>
+    <div class="day sat"><div class="date">3</div></div>
+
+    <div class="day sun"><div class="date">4</div></div>
+    <div class="day"><div class="date">5</div><div class="content">HTML</div></div>
+    <div class="day"><div class="date">6</div><div class="content">HTML</div></div>
+    <div class="day"><div class="date">7</div><div class="content">CSS</div></div>
+    <div class="day"><div class="date">8</div><div class="content">CSS</div></div>
+    <div class="day"><div class="date">9</div><div class="content">CSS</div></div>
+    <div class="day sat"><div class="date">10</div></div>
+
+    <div class="day sun"><div class="date">11</div></div>
+    <div class="day"><div class="date">12</div><div class="content">CSS</div></div>
+    <div class="day"><div class="date">13</div><div class="content">개인웹페이지<br>기획설계</div></div>
+    <div class="day"><div class="date">14</div><div class="content">Javascript</div></div>
+    <div class="day"><div class="date">15</div><div class="content">Javascript</div></div>
+    <div class="day"><div class="date">16</div><div class="content">Javascript</div></div>
+    <div class="day sat"><div class="date">17</div></div>
+
+    <div class="day sun"><div class="date">18</div></div>
+    <div class="day"><div class="date">19</div><div class="content">Javascript</div></div>
+    <div class="day"><div class="date">20</div><div class="content">Javascript</div></div>
+    <div class="day"><div class="date">21</div><div class="content">개인웹페이지<br>제작</div></div>
+    <div class="day"><div class="date">22</div><div class="content">개인웹페이지<br>제작</div></div>
+    <div class="day"><div class="date">23</div><div class="content">개인웹페이지<br>제작</div></div>
+    <div class="day sat"><div class="date">24</div></div>
+
+    <div class="day sun"><div class="date">25</div></div>
+    <div class="day"><div class="date">26</div><div class="content">과정마무리<br>테스트</div></div>
+    <div class="day"><div class="date">27</div></div>
+    <div class="day"><div class="date">28</div></div>
+    <div class="day"><div class="date">29</div></div>
+    <div class="day"><div class="date">30</div></div>
+    <div class="day sat"><div class="date">31</div></div>
+  </div>
+</div>
+</body>
+</html>

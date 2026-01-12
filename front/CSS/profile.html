@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .profile-card {
+            width: 320px;
+            padding: 18px;
+            border: 1px solid #e6e6e6;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            font-family: Arial, sans-serif;
+        }
+
+        .profile-top {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #f2f2f2;
+        }
+
+        .info .name {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .info .role {
+            margin: 6px 0 0;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .bio {
+            margin: 14px 0 16px;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 14px;
+        }
+
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat .num {
+            display: block;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .stat .label {
+            display: block;
+            margin-top: 4px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn.primary {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+  <div class="profile-top">
+    <img class="avatar" src="https://via.placeholder.com/96" alt="프로필 이미지" />
+    <div class="info">
+      <h1 class="name">최정원</h1>
+      <p class="role">Metaverse / EduTech Developer</p>
+    </div>
+  </div>
+
+  <p class="bio">
+    안녕하세요! 정보보안컨설팅으로 성장하는중 ✨
+  </p>
+  <p class="job"> 정보보안컨설팅</p>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="num">12</span>
+      <span class="label">Projects</span>
+    </div>
+    <div class="stat">
+      <span class="num">3</span>
+      <span class="label">Years</span>
+    </div>
+    <div class="stat">
+      <span class="num">24</span>
+      <span class="label">Posts</span>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn primary">팔로우</button>
+    <button class="btn">메시지</button>
+  </div>
+</div>
+</body>
+</html>
