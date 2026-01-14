@@ -1,0 +1,209 @@
+/* blog.css */
+
+:root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+
+    --primary: #2f6fed;
+    /* 파란 포인트 */
+    --primary-soft: #eaf2ff;
+    /* 연한 파랑 배경 */
+    --quote-bg: #f8fafc;
+
+    --note-bg: #fff7e6;
+    /* 연한 노랑 */
+    --note-border: #ffd28a;
+
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+        "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* 카드 전체 */
+.blog-post {
+    max-width: 760px;
+    margin: 48px auto;
+    background: var(--card);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/* 상단 여백 */
+.post-header {
+    padding: 28px 34px 12px;
+}
+
+/* 카테고리 pill */
+.category {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* 제목 */
+.post-header h1 {
+    margin: 12px 0 10px;
+    font-size: 34px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+/* 메타 */
+.post-meta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.post-meta span {
+    position: relative;
+    padding-right: 14px;
+}
+
+.post-meta span:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cbd5e1;
+}
+
+/* 본문 */
+.post-content {
+    padding: 6px 34px 22px;
+}
+
+/* 인트로 */
+.intro {
+    margin: 14px 0 20px;
+    color: #374151;
+}
+
+/* 섹션 제목 (파란 라인) */
+.post-content h2 {
+    margin: 26px 0 10px;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(47, 111, 237, 0.25);
+}
+
+/* 문단 */
+.post-content p {
+    margin: 10px 0;
+    color: #374151;
+}
+
+/* 리스트 */
+.post-content ul,
+.post-content ol {
+    margin: 10px 0 0;
+    padding-left: 20px;
+    color: #374151;
+}
+
+.post-content li {
+    margin: 6px 0;
+}
+
+/* 인용구 (왼쪽 파란 바 + 연한 배경) */
+blockquote {
+    margin: 16px 0 6px;
+    padding: 14px 16px;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--primary);
+    color: #475569;
+    border-radius: 10px;
+}
+
+/* 노트 박스 */
+.note {
+    margin: 18px 0 6px;
+    padding: 14px 16px;
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    border-radius: 10px;
+    color: #92400e;
+}
+
+.note strong {
+    color: #7c2d12;
+}
+
+/* 하단 */
+.post-footer {
+    padding: 18px 34px 26px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* 태그 pill */
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    color: #4b5563;
+    font-weight: 600;
+}
+
+/* 공유하기 */
+.share {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.share a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.share a:hover {
+    text-decoration: underline;
+}
