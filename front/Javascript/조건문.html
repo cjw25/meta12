@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let isLoggedIn = true; // 불리언타입(참,거짓)
+        let isAdmin = false; // 불리언타입(참, 거짓) 관리자인지 여부를 저장
+
+        if (isLoggedIn) {
+            if (isAdmin) {
+                console.log("관리자 접근");
+                // 관리자 접근 허용
+            } else {
+                console.log("일반 사용자 접근");
+                // 일반 사용자 접근
+            }
+        } else {
+            console.log("로그인이 필요");
+            // 로그인 필요
+        }
+
+        const num = 10;
+        if (num % 2 == 0) {
+            console.log("짝수");
+        } else {
+            console.log("홀수");
+        }
+        // 위 조건문을 한줄짜리 조건연산자(삼향연산자)로 표현
+        // (조건) ? 참일때 명령 : 거짓일때명령;
+        // 이 코드는 조건과 명령이 모두 짧을때(1줄) 주로 사용함
+        num % 2 == 0 ? console.log("짝수") : console.log("홀수");
+
+        /*
+        논리 연산자 ||(파이프), &&(앰퍼샌드), !(느낌표)
+        1) OR 연산자 ||
+        false || false = false
+        false || true = true
+        true || false = true
+        true || true = true
+        2) AND 연산자 && (모두 true일때만 결과가 true)
+        false && false = false
+        false && true = false
+        true && false = false
+        true && true = true
+        3) Not 연산자 ! (반대)
+        !true = false
+        !true = false
+
+        */
+    </script>
+</body>
+
+</html>
