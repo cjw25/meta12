@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMW Clone</title>
+    <link rel="stylesheet" href="../css/BMWmainstyle.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__inner">
+            <a class="logo" href="#" aria-label="BMW">
+                <img src="../img/BMW_Logo.svg" alt="BMW" />
+            </a>
+
+            <nav class="gnb" aria-label="main">
+                <a class="gnb__link" href="#">
+                    모델 & 내 차량 만들기 <span class="chev">▾</span>
+                </a>
+                <a class="gnb__link" href="#">
+                    전기차 <span class="chev">▾</span>
+                </a>
+                <a class="gnb__link" href="#">
+                    구매하기 <span class="chev">▾</span>
+                </a>
+                <a class="gnb__link" href="#">
+                    더 알아보기 <span class="chev">▾</span>
+                </a>
+                <a class="gnb__link gnb__link--bold" href="#">
+                    BMW 드라이빙 센터
+                </a>
+            </nav>
+
+            <div class="util">
+                <button class="util__btn" aria-label="검색">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M10 2a8 8 0 1 0 4.9 14.3l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0 0 10 2Zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12Z" />
+                    </svg>
+                </button>
+                <button class="util__btn" aria-label="계정">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z" />
+                    </svg>
+                </button>
+                <button class="util__btn" aria-label="장바구니">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2Zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2ZM6.2 6h15.4l-1.4 7.2a2 2 0 0 1-2 1.6H8.1a2 2 0 0 1-2-1.6L4.4 3H2V1h3.8l.4 2h0Z" />
+                    </svg>
+                </button>
+                <button class="util__btn" aria-label="위치">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 22s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11Zm0-9.5A2.5 2.5 0 1 1 14.5 10 2.5 2.5 0 0 1 12 12.5Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="header__line"></div>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero">
+        <div class="hero__bg" role="img" aria-label="BMW iX3"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <section class="hero__left">
+            <p class="hero__kicker">THE NEW BMW</p>
+            <h1 class="hero__title">iX3</h1>
+            <p class="hero__sub">The first of new era.</p>
+
+            <div class="hero__btns">
+                <a class="btn btn--primary" href="#">최신 소식 받아보기</a>
+                <a class="btn btn--outline" href="#">자세히 보기</a>
+            </div>
+        </section>
+
+        <button class="chat" aria-label="채팅">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16v11H7l-3 3V4Zm3 5h10v2H7V9Zm0-3h10v2H7V6Z" />
+            </svg>
+        </button>
+        </button>
+    </main>
+
+    <!-- WHITE SECTION -->
+    <section class="white">
+        <h2>지금 바로 BMW를 경험해 보세요.</h2>
+    </section>
+
+    <!-- SECTION 2 : Quick Links -->
+    <section class="quick">
+        <div class="quick__inner">
+
+            <article class="quick__item">
+                <div class="quick__icon" aria-hidden="true">
+                    <!-- 사람 아이콘 -->
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.01-8 4.5V20h16v-1.5C20 16.01 16.42 14 12 14Z" />
+                    </svg>
+                </div>
+                <h3 class="quick__title">시승 신청</h3>
+                <a class="quick__btn" href="#">바로가기</a>
+            </article>
+
+            <article class="quick__item">
+                <div class="quick__icon" aria-hidden="true">
+                    <!-- 차+돋보기 -->
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M3 11l2-5h10l2 5v7h-2v-1H5v1H3v-7Zm3.2-3L5.5 10h11l-.7-2H6.2ZM7 15a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 7 15Zm9 0a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 16 15Z" />
+                        <path
+                            d="M21 21l-3.2-3.2a3.7 3.7 0 1 1 1.4-1.4L22.4 20 21 21Zm-5.3-6.3a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" />
+                    </svg>
+                </div>
+                <h3 class="quick__title">내 차량 만들기</h3>
+                <a class="quick__btn" href="#">바로가기</a>
+            </article>
+
+            <article class="quick__item">
+                <div class="quick__icon" aria-hidden="true">
+                    <!-- 차+플러스 -->
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M3 11l2-5h10l2 5v7h-2v-1H5v1H3v-7Zm3.2-3L5.5 10h11l-.7-2H6.2ZM7 15a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 7 15Zm9 0a1.2 1.2 0 1 0 0-2.4A1.2 1.2 0 0 0 16 15Z" />
+                        <path d="M19 3h2v3h3v2h-3v3h-2V8h-3V6h3V3Z" />
+                    </svg>
+                </div>
+                <h3 class="quick__title">BMW 샵 온라인</h3>
+                <a class="quick__btn" href="#">바로가기</a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2 : Banner -->
+    <section class="banner2">
+        <div class="banner2__bg" role="img" aria-label="BMW HV Warn Call"></div>
+        <div class="banner2__shade" aria-hidden="true"></div>
+
+        <div class="banner2__content">
+            <h2 class="banner2__title">BMW HV Warn Call.</h2>
+            <p class="banner2__desc">
+                주행을 넘어 일상을 지키는 기술.<br />
+                ‘전기차 화재 소방 연계 신고 시범사업’ 실시.
+            </p>
+
+            <a class="banner2__btn" href="#">더 알아보기</a>
+        </div>
+    </section>
+
+    <section class="banner3">
+        <div class="banner3__bg" role="img" aria-label="THE NEW 2"></div>
+        <div class="banner3__shade" aria-hidden="true"></div>
+
+        <div class="banner3__content">
+            <h2 class="banner3__title">THE NEW 2</h2>
+            <p class="banner3__desc">BMW 뉴 2시리즈 그란 쿠페</p>
+            <a class="banner3__btn" href="#">모델 정보</a>
+        </div>
+    </section>
+
+</body>
+
+</html>
