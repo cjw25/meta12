@@ -41,7 +41,7 @@ li {
 }
 
 .navbar-menu a {
-    font-weight: 600; 
+    font-weight: 600;
     font-size: 16px;
     color: #555;
     padding: 8px 12px;
@@ -56,4 +56,22 @@ li {
 .dropdown-content {
     display: none;
     position: absolute;
+}
+
+.dropdown-content li a {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.dropdown-content li a:hover {
+    background: #f9f9f9;
+}
+
+.navbar-toggleBtn {
+    /* dispaly: none; */
+    font-size: 24px;
+    color: #2c3e50;
+    cursor: pointer;
+    padding: 5px;
 }

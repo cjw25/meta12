@@ -48,3 +48,4 @@ leadForm?.addEventListener('submit', (e) => {
     alert('상담 요청이 접수되었습니다! (데모: 콘솔 확인)');
     leadForm.reset();
 });
+
