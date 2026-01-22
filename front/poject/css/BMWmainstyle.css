@@ -1,3 +1,11 @@
+/* =========================
+   BMWmainstyle.css (JS 없이 버전)
+   - 메가메뉴: 오른쪽처럼 적당한 높이
+   - 메가메뉴 내부만 휠 스크롤
+   - 바깥으로 스크롤 튐(overscroll) 최대한 방지
+   (⚠️ body 스크롤 "완전 잠금"은 CSS만으로 불가)
+   ========================= */
+
 /* ===== Reset ===== */
 * {
     box-sizing: border-box;
@@ -23,11 +31,8 @@ body {
     left: 0;
     right: 0;
     z-index: 50;
-
     background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(10px);
-
-    /* ✅ mega absolute 기준 */
     overflow: visible;
 }
 
@@ -53,7 +58,7 @@ body {
     flex: 1;
 }
 
-/* a + button 공통 */
+/* a + summary 공통 */
 .gnb__link {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
@@ -70,21 +75,54 @@ body {
     font-weight: 800;
 }
 
-.chev {
-    display: inline-block;
-    margin-left: 6px;
-    font-size: 12px;
-    opacity: 0.85;
+/* details/summary 버튼을 링크처럼 */
+.gnb__details {
+    position: static;
 }
 
-/* ✅ button을 a처럼 보이게 */
 .gnb__btn {
     background: transparent;
     border: 0;
     padding: 0;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
+.gnb__btn:hover {
+    color: #fff;
+}
+
+/* summary 기본 마커 제거 */
+.gnb__details>summary {
+    list-style: none;
+}
+
+.gnb__details>summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 화살표 */
+.chev {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 12px;
+    opacity: .85;
+    line-height: 1;
+    transform: rotate(0deg);
+    transition: transform .2s ease;
+}
+
+.gnb__details[open] .chev {
+    transform: rotate(180deg);
+}
+
+/* util */
 .util__btn {
     width: 40px;
     height: 40px;
@@ -108,78 +146,168 @@ body {
     margin: 0 28px;
 }
 
-/* ===== EV Mega Menu ===== */
-.mega {
-    position: absolute;
+/* =========================
+   Mega Menu (공통) - JS 없이
+   - 오른쪽처럼 "적당한 높이" + 내부 스크롤
+   ========================= */
+
+/* 닫혀있으면 숨김 */
+.gnb__details .mega {
+    display: none;
+}
+
+.gnb__details[open] .mega {
+    display: block;
+}
+
+/* ✅ fixed + 내부 스크롤 + 높이 제한(꽉 채우지 않게) */
+.gnb__details .mega {
+    position: fixed;
     left: 0;
     right: 0;
-    top: 100%;
-    /* ✅ header 바로 아래 */
+    top: 73px;
+    /* header 72 + line 1 */
+    z-index: 999;
+
     background: #fff;
     border-top: 1px solid #e6e6e6;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.10);
-    z-index: 999;
+
+    /* ✅ 핵심: 높이를 "내용 기준"처럼 보이게 + 너무 길면 내부 스크롤 */
+    max-height: min(720px, calc(100vh - 73px));
+    overflow-y: auto;
+
+    /* ✅ 내부 스크롤이 바깥으로 튀는 현상 방지(최대한) */
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+
+    /* (선택) 살짝 슬라이드 느낌 */
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .22s ease, opacity .22s ease, visibility 0s linear .22s;
 }
 
+.gnb__details[open] .mega {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform .22s ease, opacity .22s ease, visibility 0s;
+}
+
+/* (선택) 스크롤바 */
+.gnb__details .mega::-webkit-scrollbar {
+    width: 8px;
+}
+
+.gnb__details .mega::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 8px;
+}
+
+.gnb__details .mega::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.gnb__details .mega {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.22) transparent;
+}
+
+/* 공통 내부 레이아웃 */
 .mega__inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 64px 24px 76px;
+    padding: 56px 24px 56px;
+    color: #111;
 }
 
+/* 전기차/구매하기(2열) */
 .mega__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 160px;
 }
 
-.mega__title {
-    font-size: 30px;
-    font-weight: 500;
-    letter-spacing: -0.2px;
-    margin-bottom: 28px;
-    color: #111;
-}
-
 .mega__col {
     text-align: left;
 }
 
-/* 제목: 왼쪽 정렬 + 여백 */
 .mega__title {
-    text-align: left;
     font-size: 34px;
     font-weight: 500;
     margin-bottom: 36px;
+    color: #111;
+    word-break: keep-all;
 }
 
-/* 링크: 완전 세로 리스트 */
 .mega__link {
     display: block;
-    text-align: left;
     text-decoration: none;
-    /* 밑줄 제거 */
     font-size: 18px;
     line-height: 1.9;
     padding: 10px 0;
     color: #111;
+    word-break: keep-all;
 }
 
-/* hover: BMW처럼 색만 변화 */
 .mega__link:hover {
-    text-decoration: none;
     color: #1c69d4;
 }
 
-/* 아래쪽 서브 섹션 간격 */
 .mega__spacer {
     height: 28px;
 }
 
-/* 서브 링크 톤 다운 */
 .mega__link--sub {
     font-size: 17px;
     color: #222;
+}
+
+/* 더 알아보기(4열 + 구분선 + 4열) */
+.mega__inner--learn {
+    padding: 56px 24px 56px;
+}
+
+.mega__grid--learn {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 110px;
+}
+
+.mega__sec {
+    min-width: 0;
+}
+
+.mega__head {
+    font-size: 22px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 22px;
+    letter-spacing: -0.2px;
+    word-break: keep-all;
+}
+
+.mega__item {
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #111;
+    text-decoration: none;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+.mega__item:hover {
+    color: #1c69d4;
+}
+
+.mega__divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.10);
+    margin: 44px 0;
 }
 
 /* ===== Hero ===== */
@@ -207,7 +335,6 @@ body {
             rgba(0, 0, 0, 0.00) 100%);
 }
 
-/* Left text area */
 .hero__left {
     position: relative;
     z-index: 2;
@@ -223,20 +350,20 @@ body {
 .hero__kicker {
     font-size: 14px;
     letter-spacing: 6px;
-    opacity: 0.85;
+    opacity: .85;
     margin-bottom: 18px;
 }
 
 .hero__title {
     font-size: clamp(84px, 10vw, 160px);
-    line-height: 0.9;
+    line-height: .9;
     font-weight: 500;
     margin-bottom: 14px;
 }
 
 .hero__sub {
     font-size: 20px;
-    opacity: 0.85;
+    opacity: .85;
     margin-bottom: 26px;
 }
 
@@ -245,7 +372,6 @@ body {
     gap: 14px;
 }
 
-/* Buttons */
 .btn {
     height: 46px;
     padding: 0 20px;
@@ -288,7 +414,6 @@ body {
     background: #fff !important;
     border: 1px solid rgba(0, 0, 0, 0.08) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18) !important;
-    backdrop-filter: none !important;
     cursor: pointer;
     z-index: 9999;
     display: grid;
@@ -334,14 +459,12 @@ body {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: flex-start !important;
     gap: 18px !important;
 }
 
 .quick__icon {
     width: 64px !important;
     height: 64px !important;
-    margin: 0 !important;
 }
 
 .quick__icon svg {
@@ -353,7 +476,6 @@ body {
 }
 
 .quick__title {
-    margin: 0 !important;
     font-size: 20px !important;
     font-weight: 500 !important;
     color: #111 !important;
@@ -379,145 +501,18 @@ body {
     color: #fff !important;
 }
 
-/* ===== Section 2 : Banner ===== */
-.banner2 {
-    position: relative;
-    height: 60vh;
-    min-height: 460px;
-    overflow: hidden;
-    background: #000;
-}
-
-.banner2__bg {
-    position: absolute;
-    inset: 0;
-    background: url("../img/home2.webp") center/cover no-repeat;
-}
-
-.banner2__shade {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg,
-            rgba(0, 0, 0, 0.78) 0%,
-            rgba(0, 0, 0, 0.55) 35%,
-            rgba(0, 0, 0, 0.20) 60%,
-            rgba(0, 0, 0, 0.00) 100%);
-}
-
-.banner2__content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 84px;
-    max-width: 620px;
-}
-
-.banner2__title {
-    font-size: 44px;
-    font-weight: 500;
-    margin-bottom: 14px;
-}
-
-.banner2__desc {
-    font-size: 16px;
-    line-height: 1.75;
-    opacity: 0.9;
-    margin-bottom: 22px;
-}
-
-.banner2__btn {
-    width: 260px;
-    height: 52px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 2px;
-    font-weight: 700;
-    background: rgba(0, 0, 0, 0.10);
-}
-
-.banner2__btn:hover {
-    background: rgba(255, 255, 255, 0.10);
-}
-
-/* ===== Section 3 : Main Banner ===== */
-.banner3 {
-    position: relative;
-    height: 62vh;
-    min-height: 520px;
-    overflow: hidden;
-    background: #000;
-}
-
-.banner3__bg {
-    position: absolute;
-    inset: 0;
-    background: url("../img/home3.webp") 70% 50% / cover no-repeat;
-}
-
-.banner3__shade {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg,
-            rgba(0, 0, 0, 0.86) 0%,
-            rgba(0, 0, 0, 0.62) 28%,
-            rgba(0, 0, 0, 0.22) 55%,
-            rgba(0, 0, 0, 0.00) 78%);
-}
-
-.banner3__content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 96px;
-    max-width: 680px;
-}
-
-.banner3__title {
-    font-size: 56px;
-    font-weight: 500;
-    letter-spacing: -0.5px;
-    margin: 0 0 10px;
-}
-
-.banner3__desc {
-    font-size: 18px;
-    opacity: 0.9;
-    margin: 0 0 26px;
-}
-
-.banner3__btn {
-    width: 460px;
-    height: 58px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    border-radius: 2px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    background: rgba(0, 0, 0, 0.10);
-}
-
-.banner3__btn:hover {
-    background: rgba(255, 255, 255, 0.12);
-}
-
 /* ===== Responsive ===== */
 @media (max-width: 1023px) {
-    .mega {
+    .gnb__details .mega {
         position: static;
+        max-height: none;
+        overflow: visible;
         box-shadow: none;
+
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .mega__inner {
@@ -527,6 +522,15 @@ body {
     .mega__grid {
         grid-template-columns: 1fr;
         gap: 26px;
+    }
+
+    .mega__grid--learn {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .mega__divider {
+        margin: 18px 0;
     }
 }
 
@@ -542,35 +546,5 @@ body {
 
     .white h2 {
         font-size: 28px;
-    }
-
-    .banner3 {
-        height: 56vh;
-        min-height: 460px;
-    }
-
-    .banner3__content {
-        padding-left: 24px;
-        padding-right: 24px;
-        max-width: 92vw;
-    }
-
-    .banner3__title {
-        font-size: 36px;
-    }
-
-    .banner3__btn {
-        width: 260px;
-        height: 52px;
-    }
-
-    .quick {
-        padding: 34px 0 30px !important;
-    }
-
-    .quick__inner {
-        width: min(900px, 100% - 40px) !important;
-        grid-template-columns: 1fr !important;
-        gap: 22px !important;
     }
 }

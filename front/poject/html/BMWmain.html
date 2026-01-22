@@ -20,14 +20,164 @@
             <nav class="gnb" aria-label="main">
                 <a class="gnb__link" href="#">모델 &amp; 내 차량 만들기</a>
 
-                <!-- 전기차: 메가 메뉴 토글 -->
-                <button class="gnb__link gnb__btn" type="button" aria-expanded="false" aria-controls="mega-ev"
-                    id="evBtn">
-                    전기차 <span class="chev">▾</span>
-                </button>
+                <!-- ✅ 전기차: JS 없이 토글 -->
+                <details class="gnb__details">
+                    <summary class="gnb__link gnb__btn">
+                        전기차 <span class="chev" aria-hidden="true">∨</span>
+                    </summary>
 
-                <a class="gnb__link" href="#">구매하기 <span class="chev">▾</span></a>
-                <a class="gnb__link" href="#">더 알아보기 <span class="chev">▾</span></a>
+                    <!-- EV MEGA MENU -->
+                    <div class="mega" id="mega-ev">
+                        <div class="mega__inner">
+                            <div class="mega__grid">
+                                <!-- LEFT -->
+                                <div class="mega__col">
+                                    <h2 class="mega__title">BMW 전기차</h2>
+                                    <a class="mega__link" href="#">BMW 순수 전기 모델</a>
+                                    <a class="mega__link" href="#">BMW 플러그인 하이브리드 모델</a>
+                                    <a class="mega__link" href="#">BMW 수소연료전지 모델</a>
+                                    <a class="mega__link" href="#">BMW i 소울메이트</a>
+                                    <a class="mega__link" href="#">BMW BEV MEMBERSHIP</a>
+
+                                    <div class="mega__spacer"></div>
+
+                                    <a class="mega__link mega__link--sub" href="#">전기차의 비용</a>
+                                    <a class="mega__link mega__link--sub" href="#">전기차의 장점</a>
+                                    <a class="mega__link mega__link--sub" href="#">전기차의 주행가능거리</a>
+                                </div>
+
+                                <!-- RIGHT -->
+                                <div class="mega__col">
+                                    <h2 class="mega__title">BMW 차징 &amp; 배터리</h2>
+                                    <a class="mega__link" href="#">BMW 차징</a>
+                                    <a class="mega__link" href="#">BMW 차징 앱</a>
+                                    <a class="mega__link" href="#">BMW HV Warn Call</a>
+                                    <a class="mega__link" href="#">배터리 제조사 안내</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- ✅ 구매하기: JS 없이 토글 (메뉴 내용은 네가 원하는대로 채우면 됨) -->
+                <details class="gnb__details">
+                    <summary class="gnb__link gnb__btn">
+                        구매하기 <span class="chev" aria-hidden="true">∨</span>
+                    </summary>
+
+                    <div class="mega" id="buy">
+                        <div class="mega__inner">
+                            <div class="mega__grid">
+                                <div class="mega__col">
+                                    <h2 class="mega__title">신차 구매하기</h2>
+                                    <a class="mega__link" href="#">BMW공식 딜러 위치</a>
+                                    <a class="mega__link" href="#">BMW샵 온라인</a>
+                                    <a class="mega__link" href="#">BMW월 납입금 계산기</a>
+                                    <a class="mega__link" href="#">BMW커넥티드 드라이브 스토어</a>
+                                    <a class="mega__link" href="#">BMW트레이드인/재구매</a>
+                                </div>
+
+                                <div class="mega__col">
+                                    <h2 class="mega__title">중고차 구매하기</h2>
+                                    <a class="mega__link" href="#">BMW공식 인증 중고차</a>
+                                    <a class="mega__link" href="#">BMW공식 인증 중고차 찾기</a>
+                                    <a class="mega__link" href="#">내 차 판매 문의</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="gnb__details gnb__details--learn">
+                    <summary class="gnb__link gnb__btn">
+                        더 알아보기 <span class="chev" aria-hidden="true">∨</span>
+                    </summary>
+
+                    <div class="mega mega--learn" id="mega-learn">
+                        <div class="mega__inner mega__inner--learn">
+
+                            <!-- 위 4칸 -->
+                            <div class="mega__grid mega__grid--learn">
+                                <section class="mega__sec">
+                                    <h3 class="mega__head">브랜드</h3>
+                                    <a class="mega__item" href="#">BMW M</a>
+                                    <a class="mega__item" href="#">BMW Heart of Joy</a>
+                                    <a class="mega__item" href="#">BMW 노이어 클라쎄</a>
+                                    <a class="mega__item" href="#">BMW 아트</a>
+                                    <a class="mega__item" href="#">BMW 익스클루시브 모델</a>
+                                    <a class="mega__item" href="#">BMW 인디비주얼</a>
+                                </section>
+
+                                <section class="mega__sec">
+                                    <h3 class="mega__head">익스피리언스</h3>
+                                    <a class="mega__item" href="#">BMW 엑설런스 클럽</a>
+                                    <a class="mega__item" href="#">BMW i 소울메이트</a>
+                                    <a class="mega__item" href="#">BMW BEV MEMBERSHIP</a>
+                                    <a class="mega__item" href="#">BMW 골프컵</a>
+                                    <a class="mega__item" href="#">BMW 레이디스 챔피언십</a>
+                                    <a class="mega__item" href="#">BMW 엑설런스 라운지</a>
+                                    <a class="mega__item" href="#">BMW M FEST</a>
+                                    <a class="mega__item" href="#">프리즈 서울</a>
+                                </section>
+
+                                <section class="mega__sec">
+                                    <h3 class="mega__head">BMW 앱</h3>
+                                    <a class="mega__item" href="#">BMW 밴티지</a>
+                                    <a class="mega__item" href="#">BMW 차징 앱</a>
+                                    <a class="mega__item" href="#">BMW 드라이버 가이드</a>
+                                    <a class="mega__item" href="#">My BMW 앱</a>
+                                </section>
+
+                                <section class="mega__sec">
+                                    <h3 class="mega__head">커넥티드 드라이브</h3>
+                                    <a class="mega__item" href="#">BMW 커넥티드 드라이브</a>
+                                    <a class="mega__item" href="#">BMW 커넥티드 드라이브 스토어</a>
+                                    <a class="mega__item" href="#">BMW 디지털 키</a>
+                                    <a class="mega__item" href="#">BMW iDrive</a>
+                                </section>
+                            </div>
+
+                            <!-- 아래 4칸 -->
+                            <div class="mega__divider"></div>
+
+                            <div class="mega__grid mega__grid--learn">
+                                <section class="mega__sec">
+                                    <h3 class="mega__head">공식 서비스</h3>
+                                    <a class="mega__item" href="#">BMW 서비스</a>
+                                    <a class="mega__item" href="#">BMW 프로액티브 케어</a>
+                                    <a class="mega__item" href="#">BMW 서비스 패키지</a>
+                                    <a class="mega__item" href="#">BMW 서비스케어 플러스</a>
+                                    <a class="mega__item" href="#">BMW 워런티 플러스</a>
+                                    <a class="mega__item" href="#">BMW 서비스 캠페인</a>
+                                    <a class="mega__item" href="#">BMW 모빌리티 서비스</a>
+                                    <a class="mega__item" href="#">BMW 공식 사고차 서비스</a>
+                                    <a class="mega__item" href="#">BMW 리콜 대상 차량 조회</a>
+                                    <a class="mega__item" href="#">BMW 보증서 및 BSI 조회</a>
+                                    <a class="mega__item" href="#">BMW 공식 서비스센터</a>
+                                </section>
+
+                                <section class="mega__sec">
+                                    <h3 class="mega__head">파트 &amp; 액세서리</h3>
+                                    <a class="mega__item" href="#">BMW 오리지널 액세서리</a>
+                                    <a class="mega__item" href="#">BMW 오리지널 부품 &amp; 오일</a>
+                                    <a class="mega__item" href="#">BMW 라이프스타일</a>
+                                </section>
+
+                                <section class="mega__sec">
+                                    <h3 class="mega__head">스페셜 세일즈 (Special Sales)</h3>
+                                    <a class="mega__item" href="#">스페셜 세일즈 (Special Sales) 모아보기</a>
+                                    <a class="mega__item" href="#">법인 판매</a>
+                                </section>
+
+                                <section class="mega__sec">
+                                    <h3 class="mega__head">파이낸셜 서비스</h3>
+                                    <a class="mega__item" href="#">BMW 파이낸셜 서비스</a>
+                                    <a class="mega__item" href="#">BMW 리스</a>
+                                    <a class="mega__item" href="#">BMW 할부</a>
+                                </section>
+                            </div>
+                </details>
+
                 <a class="gnb__link gnb__link--bold" href="#">BMW 드라이빙 센터</a>
             </nav>
 
@@ -54,38 +204,6 @@
         </div>
 
         <div class="header__line"></div>
-
-        <!-- EV MEGA MENU -->
-        <div class="mega" id="mega-ev" hidden>
-            <div class="mega__inner">
-                <div class="mega__grid">
-                    <!-- LEFT -->
-                    <div class="mega__col">
-                        <h2 class="mega__title">BMW 전기차</h2>
-                        <a class="mega__link" href="#">BMW 순수 전기 모델</a>
-                        <a class="mega__link" href="#">BMW 플러그인 하이브리드 모델</a>
-                        <a class="mega__link" href="#">BMW 수소연료전지 모델</a>
-                        <a class="mega__link" href="#">BMW i 소울메이트</a>
-                        <a class="mega__link" href="#">BMW BEV MEMBERSHIP</a>
-
-                        <div class="mega__spacer"></div>
-
-                        <a class="mega__link mega__link--sub" href="#">전기차의 비용</a>
-                        <a class="mega__link mega__link--sub" href="#">전기차의 장점</a>
-                        <a class="mega__link mega__link--sub" href="#">전기차의 주행가능거리</a>
-                    </div>
-
-                    <!-- RIGHT -->
-                    <div class="mega__col">
-                        <h2 class="mega__title">BMW 차징 &amp; 배터리</h2>
-                        <a class="mega__link" href="#">BMW 차징</a>
-                        <a class="mega__link" href="#">BMW 차징 앱</a>
-                        <a class="mega__link" href="#">BMW HV Warn Call</a>
-                        <a class="mega__link" href="#">배터리 제조사 안내</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </header>
 
     <!-- HERO -->
@@ -119,7 +237,6 @@
     <!-- SECTION 2 : Quick Links -->
     <section class="quick">
         <div class="quick__inner">
-
             <article class="quick__item">
                 <div class="quick__icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
@@ -155,7 +272,6 @@
                 <h3 class="quick__title">BMW 샵 온라인</h3>
                 <a class="quick__btn" href="#">바로가기</a>
             </article>
-
         </div>
     </section>
 
@@ -185,35 +301,20 @@
             <a class="banner3__btn" href="#">모델 정보</a>
         </div>
     </section>
-
     <script>
-        const evBtn = document.getElementById('evBtn');
-        const mega = document.getElementById('mega-ev');
+        const menus = document.querySelectorAll('.gnb__details');
 
-        function closeMega() {
-            evBtn.setAttribute('aria-expanded', 'false');
-            mega.hidden = true;
-            const chev = evBtn.querySelector('.chev');
-            if (chev) chev.textContent = '▾';
-        }
+        menus.forEach(current => {
+            current.addEventListener('toggle', () => {
+                if (!current.open) return;
 
-        function openMega() {
-            evBtn.setAttribute('aria-expanded', 'true');
-            mega.hidden = false;
-            const chev = evBtn.querySelector('.chev');
-            if (chev) chev.textContent = '▴';
-        }
-
-        evBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isOpen = evBtn.getAttribute('aria-expanded') === 'true';
-            if (isOpen) closeMega();
-            else openMega();
+                menus.forEach(other => {
+                    if (other !== current) {
+                        other.removeAttribute('open');
+                    }
+                });
+            });
         });
-
-        mega.addEventListener('click', (e) => e.stopPropagation());
-        document.addEventListener('click', closeMega);
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMega(); });
     </script>
 </body>
 
